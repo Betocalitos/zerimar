@@ -28,7 +28,7 @@
     -> Project counter
     -> Blog newsletter
     -> Support footer
-    -> CTA area 
+    -> CTA area
     -> Career
     -> Icon info
     -> Banner
@@ -2118,7 +2118,7 @@ input::placeholder {
 
 .header-navigation__contact__content .sub-text {
 	font-weight: 700;
-	font-size: 1.5rem;
+	font-size: 1.1rem;
 }
 
 .header-navigation__icon {
@@ -18934,9 +18934,9 @@ body.boxed {
 
 @media only screen and (min-width: 1200px) and (max-width: 1499px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
 
-.header-navigation__contact {
+/* .header-navigation__contact {
 	display: none;
-}
+} */
 
 .glyph {
 	width: 9em;
@@ -21481,6 +21481,12 @@ a.scroll-top {
 	font-size: calc(1.34375rem + 1.125vw);
 }
 
+}
+
+@media only screen and (max-width:1326px){
+    .header-navigation__contact__content .sub-text {
+        font-size: 1rem;
+    }
 }
 
 @-webkit-keyframes moveVertical {
