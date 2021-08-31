@@ -104,7 +104,7 @@
                                 <!-- logo -->
                                 <div class="logo">
                                     <a href="index.html">
-                                        <img src="{{asset('img/logo/logo-dark.png')}}" class="img-fluid" alt="">
+                                        <img src="{{asset('img/logo/logo.png')}}" class="img-fluid" alt="">
                                     </a>
                                 </div>
 

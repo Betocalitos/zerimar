@@ -29,5 +29,6 @@ class PageController extends Controller
     public function equipment($slug)
     {
         $typesEquipment = TypeEquipment::all();
+        return $slug;
     }
 }

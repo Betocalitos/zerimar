@@ -19,7 +19,9 @@ Route::get('/nosotros', 'PageController@about')->name('about');
 Route::get('/contacto', 'PageController@contact')->name('contact');
 
 //equipment
-Route::get('equipos/{$slug}', 'PageController@equipment')->name('equipments');
+Route::get('/equipos/{slug}', 'PageController@equipment')->name('equipments');
+
+
 // Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
