@@ -103,7 +103,7 @@
                             <div class="header-navigation-wrapper">
                                 <!-- logo -->
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="{{route('index')}}">
                                         <img src="{{asset('img/logo/logo.png')}}" class="img-fluid" alt="">
                                     </a>
                                 </div>
@@ -131,14 +131,14 @@
                                 <div class="header-search">
                                     <div class="social-links">
                                         <ul>
-                                            <li><a href="//facebook.com" data-tippy="Facebook" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-facebook"></i></a>
+                                            <li><a href="javascript:void();" data-tippy="Facebook" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-facebook"></i></a>
                                             </li>
-                                            <li><a href="//twitter.com" data-tippy="Twitter" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-twitter"></i></a>
+                                            <li><a href="javascript:void();" data-tippy="Twitter" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-twitter"></i></a>
                                             </li>
-                                            <li><a href="//vimeo.com" data-tippy="Vimeo" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-vimeo"></i></a></li>
-                                            <li><a href="//linkedin.com" data-tippy="Linkedin" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-linkedin"></i></a>
+                                            <li><a href="javascript:void();" data-tippy="Vimeo" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-vimeo"></i></a></li>
+                                            <li><a href="javascript:void();" data-tippy="Linkedin" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-linkedin"></i></a>
                                             </li>
-                                            <li><a href="//skype.com" data-tippy="Skype" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-skype"></i></a></li>
+                                            <li><a href="javascript:void();" data-tippy="Skype" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-skype"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -157,8 +157,8 @@
                         <div class="col-md-4 col-sm-6 col-5">
                             <!-- logo -->
                             <div class="logo">
-                                <a href="index.html">
-                                    <img src="{{asset('img/logo/logo-dark.png')}}" class="img-fluid" alt="">
+                                <a href="{{route('index')}}">
+                                    <img src="{{asset('img/logo/logo.png')}}" class="img-fluid" alt="">
                                 </a>
                             </div>
                         </div>
@@ -167,11 +167,11 @@
                             <div class="mobile-menu-content">
                                 <div class="social-links d-none d-md-block">
                                     <ul>
-                                        <li><a href="//facebook.com" data-tippy="Facebook" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-facebook"></i></a></li>
-                                        <li><a href="//twitter.com" data-tippy="Twitter" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-twitter"></i></a></li>
-                                        <li><a href="//vimeo.com" data-tippy="Vimeo" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-vimeo"></i></a></li>
-                                        <li><a href="//linkedin.com" data-tippy="Linkedin" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-linkedin"></i></a></li>
-                                        <li><a href="//skype.com" data-tippy="Skype" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-skype"></i></a></li>
+                                        <li><a href="javascript:void();" data-tippy="Facebook" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-facebook"></i></a></li>
+                                        <li><a href="javascript:void();" data-tippy="Twitter" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-twitter"></i></a></li>
+                                        <li><a href="javascript:void();" data-tippy="Vimeo" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-vimeo"></i></a></li>
+                                        <li><a href="javascript:void();" data-tippy="Linkedin" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-linkedin"></i></a></li>
+                                        <li><a href="javascript:void();" data-tippy="Skype" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-skype"></i></a></li>
                                     </ul>
                                 </div>
                                 <div class="mobile-navigation-icon" id="mobile-menu-trigger">
@@ -194,12 +194,12 @@
                 <div class="col-lg-12">
                     <div class="footer-content-wrapper">
                         <div class="row">
-                            <div class="col-lg-6 col-md-12">
+                            <div class="col-md-6 ">
                                 <!-- footer intro wrapper -->
                                 <div class="footer-intro-wrapper">
                                     <div class="footer-logo">
                                         <a href="#">
-                                            <img src="{{asset('img/logo/logo-light.png')}}" class="img-fluid" alt="">
+                                            <img src="{{asset('img/logo/logo.png')}}" class="img-fluid" alt="">
                                         </a>
                                     </div>
                                     <div class="footer-desc">
@@ -207,16 +207,16 @@
                                     </div>
                                     <div class="social-links">
                                         <ul>
-                                            <li><a href="//facebook.com" data-tippy="Facebook" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__black" data-tippy-placement="top"><i class="ion-social-facebook"></i></a></li>
-                                            <li><a href="//twitter.com" data-tippy="Twitter" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__black" data-tippy-placement="top"><i class="ion-social-twitter"></i></a></li>
-                                            <li><a href="//vimeo.com" data-tippy="Vimeo" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__black" data-tippy-placement="top"><i class="ion-social-vimeo"></i></a></li>
-                                            <li><a href="//linkedin.com" data-tippy="Linkedin" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__black" data-tippy-placement="top"><i class="ion-social-linkedin"></i></a></li>
-                                            <li><a href="//skype.com" data-tippy="Skype" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__black" data-tippy-placement="top"><i class="ion-social-skype"></i></a></li>
+                                            <li><a href="javascript:void();" data-tippy="Facebook" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__black" data-tippy-placement="top"><i class="ion-social-facebook"></i></a></li>
+                                            <li><a href="javascript:void();" data-tippy="Twitter" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__black" data-tippy-placement="top"><i class="ion-social-twitter"></i></a></li>
+                                            <li><a href="javascript:void();" data-tippy="Vimeo" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__black" data-tippy-placement="top"><i class="ion-social-vimeo"></i></a></li>
+                                            <li><a href="javascript:void();" data-tippy="Linkedin" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__black" data-tippy-placement="top"><i class="ion-social-linkedin"></i></a></li>
+                                            <li><a href="javascript:void();" data-tippy="Skype" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__black" data-tippy-placement="top"><i class="ion-social-skype"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-2 col-md-4">
+                            <div class="col-sm-6 col-md-3">
                                 <!-- footer widget -->
                                 <div class="footer-widget">
                                     <h4 class="footer-widget__title">EQUIPOS</h4>
@@ -227,30 +227,15 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-lg-2 col-md-4">
+                            <div class=" col-sm-6 col-md-3">
                                 <!-- footer widget -->
                                 <div class="footer-widget">
-                                    <h4 class="footer-widget__title">COMPANY</h4>
+                                    <h4 class="footer-widget__title">Enlaces</h4>
                                     <ul class="footer-widget__navigation">
-                                        <li><a href="#">About</a></li>
-                                        <li><a href="#">Expertise</a></li>
-                                        <li><a href="#">Sustainability</a></li>
-                                        <li><a href="#">News & Media</a></li>
-                                        <li><a href="#">Case Studies</a></li>
-                                        <li><a href="#">Contacts</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-4">
-                                <!-- footer widget -->
-                                <div class="footer-widget">
-                                    <h4 class="footer-widget__title">INDUSTRIES</h4>
-                                    <ul class="footer-widget__navigation">
-                                        <li><a href="#">Electronic Materials</a></li>
-                                        <li><a href="#">Gifts & Apparel</a></li>
-                                        <li><a href="#">Auto Parts</a></li>
-                                        <li><a href="#">Power Systems</a></li>
-                                        <li><a href="#">Building Management</a></li>
+                                        <li><a href="{{route('index')}}">Inicio</a></li>
+                                        <li><a href="{{route('about')}}">Nosotros</a></li>
+                                        <li><a href="#">Equipos</a></li>
+                                        <li><a href="{{route('contact')}}">Contacto</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -282,8 +267,8 @@
                     <div class="col-md-4 col-sm-6 col-9">
                         <!-- logo -->
                         <div class="logo">
-                            <a href="index.html">
-                                <img src="{{asset('img/logo/logo-dark.png')}}" class="img-fluid" alt="">
+                            <a href="{{route('index')}}">
+                                <img src="{{asset('img/logo/logo.png')}}" class="img-fluid" alt="">
                             </a>
                         </div>
                     </div>
