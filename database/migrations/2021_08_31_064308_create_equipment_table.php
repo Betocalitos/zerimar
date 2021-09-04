@@ -15,13 +15,18 @@ class CreateEquipmentTable extends Migration
     {
         Schema::create('equipment', function (Blueprint $table) {
             $table->id();
+            $table->string('name_slug')->unique();
             $table->string('brand');
             $table->string('model')->nullable();
             $table->string('series')->nullable();
             $table->integer('year')->nullable();
-            $table->decimal('price')->nullable();
+            $table->decimal('price_rent')->nullable();
+            $table->decimal('price_sale')->nullable();
+            $table->string('capacity')->nullable();
+            $table->string('motor')->nullable();
             $table->text('description')->nullable();
             $table->enum('exchange', ['MXN', 'DLLS']);
+            $table->unsignedBigInteger('type_equipment_id');
             $table->timestamps();
         });
     }
