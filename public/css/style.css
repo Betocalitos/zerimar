@@ -21475,6 +21475,14 @@ a.scroll-top {
 
 }
 
+@media only screen and (max-width: 600px)  {
+
+    .support-footer__single {
+        font-size: 12px;
+    }
+
+    }
+
 @media only screen and (max-width: 479px) and (max-width: 1200px) {
 
 .breadcrumb-page-title--style2 {
