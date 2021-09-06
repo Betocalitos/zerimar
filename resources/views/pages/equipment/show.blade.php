@@ -104,7 +104,7 @@
                                                 <div class="social-links d-inline-block">
                                                     <ul>
                                                         <li><a href="javascript:window.open('https://www.facebook.com/sharer.php?u={{url()->current()}}','newwindow','width=500,height=700')" data-tippy="Facebook" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__black" data-tippy-placement="top"><i class="ion-social-facebook"></i></a></li>
-                                                        <li><a href="javascript:window.open('https://wa.me/?text=Te%20comparto%esta%20propiedad,%20{{url()->current()}}')" data-tippy="Whatsapp" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__black" data-tippy-placement="top"><i class="ion-social-whatsapp"></i></a></li>
+                                                        <li><a href="javascript:window.open('https://wa.me/?text=Te%20comparto%este%20equipo,%20{{url()->current()}}')" data-tippy="Whatsapp" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__black" data-tippy-placement="top"><i class="ion-social-whatsapp"></i></a></li>
                                                         <li><a href="javascript:window.open(`https://www.linkedin.com/shareArticle?mini=true&url={{url()->current()}}&title={{$equipment->name}}&summary={{$equipment->description}}&source=LinkedIn`,'newwindow','width=500,height=700')" data-tippy="Linkedin" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__black" data-tippy-placement="top"><i class="ion-social-linkedin"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -193,17 +193,17 @@
                                         <div class="shop-single-product mb-0">
                                             <div class="shop-single-product__thumb-wrapper">
                                                 <div class="shop-single-product__image">
-                                                    <a href="{{route('equipments.index',[$other->name_slug])}}">
+                                                    <a href="{{route('equipments.show',[$other->name_slug])}}">
                                                         <img src="{{asset($other->images[0]->path)}}" class="img-fluid" alt="{{$other->name}}">
                                                     </a>
                                                 </div>
 
                                                 <div class="shop-single-product__cart-btn">
-                                                    <a href="{{asset($other->images[0]->path)}}"> VER M&Aacute;S...</a>
+                                                    <a href="{{route('equipments.show',[$other->name_slug])}}"> VER M&Aacute;S...</a>
                                                 </div>
                                             </div>
                                             <div class="shop-single-product__content">
-                                                <h3 class="shop-single-product__title"><a href="{{route('equipments.index',[$other->name_slug])}}">{{$other->name}}</a></h3>
+                                                <h3 class="shop-single-product__title"><a href="{{route('equipments.show',[$other->name_slug])}}">{{$other->name}}</a></h3>
                                                 <div class="shop-single-product__price">
                                                     <span class="main-price ">${{number_format($other->price_sale,2)}} {{$other->exchage}}</span>
                                                 </div>

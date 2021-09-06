@@ -53,7 +53,7 @@
                                                 </div>
                                             </div>
                                             <div class="shop-single-product__content">
-                                                <h3 class="shop-single-product__title"><a href="shop-product.html">Bi-Material Nail Sets</a></h3>
+                                                <h3 class="shop-single-product__title"><a href="shop-product.html">{{$item->name}}</a></h3>
                                                 <div class="shop-single-product__price">
                                                     <span class="discounted-price">${{number_format($item->price_sale,2)}} {{$item->exchange}}</span>
                                                 </div>
