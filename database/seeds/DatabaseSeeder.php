@@ -13,9 +13,18 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->truncateTables([
-            'type_equipment'
+            'type_equipment',
+            'equipment',
+            'lift_trucks',
+            'extra_features',
+            'images'
         ]);
-        $this->call(TypeEquipmentSeeder::class);
+        $this->call(
+            [
+                TypeEquipmentSeeder::class,
+                EquipmentSeeder::class
+            ]
+        );
     }
 
     public function truncateTables(array $tables)

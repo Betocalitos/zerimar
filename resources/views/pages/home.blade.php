@@ -105,118 +105,29 @@
                     <!-- feature project box wrapper -->
                     <div class="feature-project-box-wrapper">
                         <div class="row">
+                            @foreach ($randomEquipments1 as $item)
+
                             <div class="col-md-4">
                                 <!-- single feature project box -->
                                 <div class="single-feature-project-box">
                                     <div class="single-feature-project-box__image">
-                                        <img src="{{asset('img/banner/feature1.jpg')}}" class="img-fluid" alt="">
+                                        <img src="{{asset($item->images[0]->path)}}" class="img-fluid" alt="{{$item->name}}" style="height: 278px">
                                     </div>
                                     <div class="single-feature-project-box__content">
-                                        <h3 class="single-feature-project-box__title">Social Responsibilities</h3>
-                                        <p class="single-feature-project-box__subtitle">Our operation aligns with and forms a business model in order to succeed.</p>
+                                        <h3 class="single-feature-project-box__title">
+                                            {{$item->name}}
+                                        </h3>
+                                        <p class="single-feature-project-box__subtitle">@if ($item->description){{Str::substr($item->description, 0, 70).'...'}}@endif</p>
                                     </div>
-                                    <a href="#" class="single-feature-project-box__link"> <span>SEE MORE </span> <i class="ion-arrow-right-c"></i></a>
+                                    <a href="{{route('equipments.show',[$item->name_slug])}}" class="single-feature-project-box__link"> <span>VER MAS </span> <i class="ion-arrow-right-c"></i></a>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <!-- single feature project box -->
-                                <div class="single-feature-project-box">
-                                    <div class="single-feature-project-box__image">
-                                        <img src="{{asset('img/banner/feature2.jpg')}}" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="single-feature-project-box__content">
-                                        <h3 class="single-feature-project-box__title">Leadership Role</h3>
-                                        <p class="single-feature-project-box__subtitle">We lead a powerfully growing company with an evident social improving role.</p>
-                                    </div>
-                                    <a href="#" class="single-feature-project-box__link"> <span>SEE MORE </span> <i class="ion-arrow-right-c"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <!-- single feature project box -->
-                                <div class="single-feature-project-box">
-                                    <div class="single-feature-project-box__image">
-                                        <img src="{{asset('img/banner/feature3.jpg')}}" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="single-feature-project-box__content">
-                                        <h3 class="single-feature-project-box__title">Awards & Accolades</h3>
-                                        <p class="single-feature-project-box__subtitle">The rewards we received are the noble compliments for what we have done.</p>
-                                    </div>
-                                    <a href="#" class="single-feature-project-box__link"> <span>SEE MORE </span> <i class="ion-arrow-right-c"></i></a>
-                                </div>
-                            </div>
+
+                            @endforeach
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12">
-                    <!-- feature project slider wrapper -->
-                    <div class="feature-project-slider-wrapper section-space--top--60">
-                        <div class="swiper-container feature-project-slider-container">
-                            <div class="swiper-wrapper feature-project-slider-wrapper">
-                                <div class="swiper-slide feature-project-single-slide">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-6">
-                                            <div class="feature-project-single-slide__image">
-                                                <img src="{{asset('img/banner/feature4.png')}}" class="img-fluid" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="feature-project-single-slide__content">
-                                                <!-- section title left align -->
-                                                <div class="section-title-area">
-                                                    <h4 class="subtitle">SUSTAINABILITY GOALS</h4>
-                                                    <h2 class="title title--left">Safety Environment</h2>
-                                                </div>
-                                                <p class="section-title-content"> It is imperative that everyone follows the policies and guidelines to ensure their own safety and the safety of others around them.</p>
-                                                <a href="#" class="ht-btn ht-btn--dark">SUSTAINABILITY</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide feature-project-single-slide">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-6">
-                                            <div class="feature-project-single-slide__image">
-                                                <img src="{{asset('img/banner/feature5.png')}}" class="img-fluid" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="feature-project-single-slide__content">
-                                                <!-- section title left align -->
-                                                <div class="section-title-area">
-                                                    <h4 class="subtitle">SUSTAINABILITY GOALS</h4>
-                                                    <h2 class="title title--left">Integrity & Safety</h2>
-                                                </div>
-                                                <p class="section-title-content"> It is imperative that everyone follows the policies and guidelines to ensure their own safety and the safety of others around them.</p>
-                                                <a href="#" class="ht-btn ht-btn--dark">SUSTAINABILITY</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide feature-project-single-slide">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-6">
-                                            <div class="feature-project-single-slide__image">
-                                                <img src="{{asset('img/banner/feature6.png')}}" class="img-fluid" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="feature-project-single-slide__content">
-                                                <!-- section title left align -->
-                                                <div class="section-title-area">
-                                                    <h4 class="subtitle">SUSTAINABILITY GOALS</h4>
-                                                    <h2 class="title title--left">Health & Safety</h2>
-                                                </div>
-                                                <p class="section-title-content"> It is imperative that everyone follows the policies and guidelines to ensure their own safety and the safety of others around them.</p>
-                                                <a href="#" class="ht-btn ht-btn--dark">SUSTAINABILITY</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-pagination swiper-pagination-1 d-none d-lg-block"></div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -233,7 +144,7 @@
                                 <i class="flaticon-001-worker-1"></i>
                             </div>
                             <div class="industry-single-nav__title">
-                                Engineering Chemistry
+                                Compra de Montacargas
                             </div>
                         </div>
                     </div>
@@ -243,7 +154,7 @@
                                 <i class="flaticon-010-tank-1"></i>
                             </div>
                             <div class="industry-single-nav__title">
-                                Oil & Gas Energy
+                                Venta de Montacargas
                             </div>
                         </div>
                     </div>
@@ -253,7 +164,7 @@
                                 <i class="flaticon-026-mechanism"></i>
                             </div>
                             <div class="industry-single-nav__title">
-                                Bridge Construction
+                                Renta de Montacargas
                             </div>
                         </div>
                     </div>
@@ -263,7 +174,17 @@
                                 <i class="flaticon-040-factory"></i>
                             </div>
                             <div class="industry-single-nav__title">
-                                Industrial Construction
+                                Renta a tu medida
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="industry-single-nav">
+                            <div class="industry-single-nav__icon">
+                                <i class="flaticon-040-factory"></i>
+                            </div>
+                            <div class="industry-single-nav__title">
+                                Venta de partes, accesorios
                             </div>
                         </div>
                     </div>
@@ -273,7 +194,7 @@
                                 <i class="flaticon-041-eco"></i>
                             </div>
                             <div class="industry-single-nav__title">
-                                Metal Engineering
+                                Traslados de Equipos
                             </div>
                         </div>
                     </div>
@@ -283,7 +204,17 @@
                                 <i class="flaticon-008-machine-1"></i>
                             </div>
                             <div class="industry-single-nav__title">
-                                Automotive Chains
+                                Servicios de sistemas hidráulicos
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="industry-single-nav">
+                            <div class="industry-single-nav__icon">
+                                <i class="flaticon-008-machine-1"></i>
+                            </div>
+                            <div class="industry-single-nav__title">
+                                Reparación general de montacargas
                             </div>
                         </div>
                     </div>
@@ -297,79 +228,99 @@
             <div class="swiper-container industry-slider-content-container">
                 <div class="swiper-wrapper industry-slider-content-wrapper">
                     <div class="swiper-slide">
-                        <div class="industry-slider-content-single bg-img" data-bg="{{asset('img/backgrounds/1.jpg')}}">
+                        <div class="industry-slider-content-single bg-img" data-bg="{{asset('img/home/1.jpg')}}">
                             <div class="container">
                                 <div class="industry-content-inner">
                                     <div class="section-title-area">
-                                        <h2 class="title title--left"> Engineering Chemistry</h2>
+                                        <h2 class="title title--left">Compra de montacargas seminuevas y usadas</h2>
                                     </div>
-                                    <p class="section-title-content"> We harness our vast resources of worldwide engineers, designers, and fabricators to provide the best procurement options.</p>
-                                    <a href="service-details.html" class="ht-btn ht-btn--dark">READ MORE</a>
+                                    <p class="section-title-content">Una breve descripción, con pocas palabras, del servicio a ofrecer.</p>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="industry-slider-content-single bg-img" data-bg="{{asset('img/backgrounds/2.jpg')}}">
+                        <div class="industry-slider-content-single bg-img" data-bg="{{asset('img/home/8.jpg')}}">
                             <div class="container">
                                 <div class="industry-content-inner">
                                     <div class="section-title-area">
-                                        <h2 class="title title--left"> Oil & Gas Energy</h2>
+                                        <h2 class="title title--left">Ventas de montacargas nuevas, seminuevas y usadas </h2>
                                     </div>
-                                    <p class="section-title-content"> Many rodents and insects can cause allergies and some have poisonous venom that can hurt, and sometimes kill, people.</p>
-                                    <a href="service-details-2.html" class="ht-btn ht-btn--dark">READ MORE</a>
+                                    <p class="section-title-content"> Una breve descripción, con pocas palabras, del servicio a ofrecer.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="industry-slider-content-single bg-img" data-bg="{{asset('img/backgrounds/3.jpg')}}">
+                        <div class="industry-slider-content-single bg-img" data-bg="{{asset('img/home/4.jpg')}}">
                             <div class="container">
                                 <div class="industry-content-inner">
                                     <div class="section-title-area">
-                                        <h2 class="title title--left"> Bridge Construction</h2>
+                                        <h2 class="title title--left">Renta de montacargas con capacidad de 3,000 a 15,000 libras</h2>
                                     </div>
-                                    <p class="section-title-content"> Bridge construction typically involves methods using relatively discrete elements which are assembled piece by piece.</p>
-                                    <a href="service-details-3.html" class="ht-btn ht-btn--dark">READ MORE</a>
+                                    <p class="section-title-content"> Una breve descripción, con pocas palabras, del servicio a ofrecer.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="industry-slider-content-single bg-img" data-bg="{{asset('img/backgrounds/4.jpg')}}">
+                        <div class="industry-slider-content-single bg-img" data-bg="{{asset('img/home/2.jpg')}}">
                             <div class="container">
                                 <div class="industry-content-inner">
                                     <div class="section-title-area">
-                                        <h2 class="title title--left"> Industrial Construction</h2>
+                                        <h2 class="title title--left"> Renta a tu medida</h2>
                                     </div>
-                                    <p class="section-title-content"> Those in the industrial construction business design the view, install the equipment and maintain the titanic structures projects.</p>
-                                    <a href="service-details-4.html" class="ht-btn ht-btn--dark">READ MORE</a>
+                                    <p class="section-title-content">La renta se puede adquirir por  hora, día, semana o mes.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="industry-slider-content-single bg-img" data-bg="{{asset('img/backgrounds/5.jpg')}}">
+                        <div class="industry-slider-content-single bg-img" data-bg="{{asset('img/home/5.jpg')}}">
                             <div class="container">
                                 <div class="industry-content-inner">
                                     <div class="section-title-area">
-                                        <h2 class="title title--left"> Metal Engineering</h2>
+                                        <h2 class="title title--left"> Venta de partes, accesorios y todo para seguridad industrial</h2>
                                     </div>
-                                    <p class="section-title-content"> Chemical materials developed to assist in the production of food, feed, and fiber include scores of herbicides other pesticides,</p>
-                                    <a href="service-details-5.html" class="ht-btn ht-btn--dark">READ MORE</a>
+                                    <p class="section-title-content">Una breve descripción, con pocas palabras, del servicio a ofrecer.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="industry-slider-content-single bg-img" data-bg="{{asset('img/backgrounds/6.jpg')}}">
+                        <div class="industry-slider-content-single bg-img" data-bg="{{asset('img/home/8.jpg')}}">
                             <div class="container">
                                 <div class="industry-content-inner">
                                     <div class="section-title-area">
-                                        <h2 class="title title--left"> Automotive Chains</h2>
+                                        <h2 class="title title--left">Traslados de Equipos</h2>
                                     </div>
-                                    <p class="section-title-content"> Industrial engineering is concerned with the development, improvement, and advancement in manufacturing, producing and recycling.</p>
-                                    <a href="service-details-6.html" class="ht-btn ht-btn--dark">READ MORE</a>
+                                    <p class="section-title-content">Una breve descripción, con pocas palabras, del servicio a ofrecer.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="industry-slider-content-single bg-img" data-bg="{{asset('img/home/3.jpg')}}">
+                            <div class="container">
+                                <div class="industry-content-inner">
+                                    <div class="section-title-area">
+                                        <h2 class="title title--left">Servicios de sistemas hidráulicos </h2>
+                                    </div>
+                                    <p class="section-title-content">Mangueras, retenes y reparación de sistemas hidráulicos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="industry-slider-content-single bg-img" data-bg="{{asset('img/home/7.jpg')}}">
+                            <div class="container">
+                                <div class="industry-content-inner">
+                                    <div class="section-title-area">
+                                        <h2 class="title title--left">Reparación general de montacargas</h2>
+                                    </div>
+                                    <p class="section-title-content">Una breve descripción, con pocas palabras, del servicio a ofrecer.</p>
                                 </div>
                             </div>
                         </div>
@@ -386,67 +337,26 @@
                 <div class="col-lg-12">
                     <!-- section title -->
                     <div class="section-title-area section-title-area--middle section-space--bottom--80">
-                        <h4 class="subtitle">FEATURED PROJECTS</h4>
-                        <h2 class="title">Explore What We've Done</h2>
+                        <h4 class="subtitle">Venta y Renta</h4>
+                        <h2 class="title">Nuestros Equipos</h2>
                     </div>
 
                     <!-- featured project two slider -->
                     <div class="featured-project-two-slider">
                         <div class="swiper-container featured-project-two-slider-container">
                             <div class="swiper-wrapper featured-project-two-slider-wrapper">
-
+                                @foreach ($randomEquipments2 as $item)
                                 <div class="swiper-slide">
                                     <div class="feature-project-two-single-item">
                                         <div class="feature-project-two-single-item__image">
-                                            <img src="{{asset('img/projects/2.jpg')}}" class="img-fluid" alt="">
+                                            <img src="{{asset($item->images[0]->path)}}" style="max-height: 305px;" class="img-fluid" alt="{{$item->name}}">
                                         </div>
                                         <div class="feature-project-two-single-item__content">
-                                            <a href="case-study-single-slider.html" class="stretched-link">GreenEco Park</a>
+                                            <a href="{{route('equipments.show',[$item->name_slug])}}" class="stretched-link">{{$item->name}}</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="feature-project-two-single-item">
-                                        <div class="feature-project-two-single-item__image">
-                                            <img src="{{asset('img/projects/3.jpg')}}" class="img-fluid" alt="">
-                                        </div>
-                                        <div class="feature-project-two-single-item__content">
-                                            <a href="case-study-single-gallery.html" class="stretched-link">Dorma Mall</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="feature-project-two-single-item">
-                                        <div class="feature-project-two-single-item__image">
-                                            <img src="{{asset('img/projects/4.jpg')}}" class="img-fluid" alt="">
-                                        </div>
-                                        <div class="feature-project-two-single-item__content">
-                                            <a href="case-study-single-slider.html" class="stretched-link">Polley Theater</a>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="feature-project-two-single-item">
-                                        <div class="feature-project-two-single-item__image">
-                                            <img src="{{asset('img/projects/5.jpg')}}" class="img-fluid" alt="">
-                                        </div>
-                                        <div class="feature-project-two-single-item__content">
-                                            <a href="case-study-single-gallery.html" class="stretched-link">Heidge Museum</a>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="feature-project-two-single-item">
-                                        <div class="feature-project-two-single-item__image">
-                                            <img src="{{asset('img/projects/6.jpg')}}" class="img-fluid" alt="">
-                                        </div>
-                                        <div class="feature-project-two-single-item__content">
-                                            <a href="case-study-single-slider.html" class="stretched-link">Burry Bridge</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="swiper-pagination swiper-pagination-2"></div>
@@ -467,7 +377,7 @@
                     <div class="testimonial-slider__body-wrapper section-space--bottom--60">
                         <!-- testimonial slider title -->
                         <div class="testimonial-slider__title-wrapper section-space--bottom--60">
-                            <h2 class="testimonial-slider__title"><i class="icon icomoon-chat-1"></i> Happy Customers Said</h2>
+                            <h2 class="testimonial-slider__title"><i class="icon icomoon-chat-1"></i>Clientes Satisfechos</h2>
                             <div class="testimonial-slider__nav-container">
                                 <div class="ht-swiper-button-prev ht-swiper-button-prev-3 ht-swiper-button-nav"><i class="ion-chevron-left"></i></div>
                                 <div class="ht-swiper-button-next ht-swiper-button-next-3 ht-swiper-button-nav"><i class="ion-chevron-right"></i></div>
@@ -483,7 +393,7 @@
                                                 <img src="{{asset('img/testimonial/1.jpg')}}" class="img-fluid" alt="">
                                             </div>
                                             <div class="testimonial-slider__single-item__content">
-                                                <h4 class="testimonial-name"> Fannie Moreno <span class="designation">Founder Xcompany</span></h4>
+                                                <h4 class="testimonial-name"> Carlos Martinez <span class="designation">Nombre de la empresa</span></h4>
                                                 <div class="rating">
                                                     <i class="ion-ios-star"></i>
                                                     <i class="ion-ios-star"></i>
@@ -491,7 +401,7 @@
                                                     <i class="ion-ios-star"></i>
                                                     <i class="ion-ios-star-outline"></i>
                                                 </div>
-                                                <p class="text">I would say I highly recommend this to my friends, acquaintances and family members. The attitude and services are always dedicated.</p>
+                                                <p class="text"> Una opinión de un cliente satisfecho con nuestro gran servicio. </p>
                                             </div>
                                         </div>
                                     </div>
@@ -501,15 +411,15 @@
                                                 <img src="{{asset('img/testimonial/2.jpg')}}" class="img-fluid" alt="">
                                             </div>
                                             <div class="testimonial-slider__single-item__content">
-                                                <h4 class="testimonial-name">David James <span class="designation">Founder Xcompany</span></h4>
+                                                <h4 class="testimonial-name"> Fernando Delgado <span class="designation">Nombre de la empresa</span></h4>
                                                 <div class="rating">
                                                     <i class="ion-ios-star"></i>
                                                     <i class="ion-ios-star"></i>
                                                     <i class="ion-ios-star"></i>
                                                     <i class="ion-ios-star"></i>
-                                                    <i class="ion-ios-star"></i>
+                                                    <i class="ion-ios-star-outline"></i>
                                                 </div>
-                                                <p class="text">I would say I highly recommend this to my friends, acquaintances and family members. The attitude and services are always dedicated.</p>
+                                                <p class="text"> Una opinión de un cliente satisfecho con nuestro gran servicio. </p>
                                             </div>
                                         </div>
                                     </div>
@@ -519,7 +429,7 @@
                                                 <img src="{{asset('img/testimonial/3.jpg')}}" class="img-fluid" alt="">
                                             </div>
                                             <div class="testimonial-slider__single-item__content">
-                                                <h4 class="testimonial-name"> Bryan Freeman <span class="designation">Founder Xcompany</span></h4>
+                                                <h4 class="testimonial-name"> Jhoana Santos <span class="designation">Nombre de la empresa</span></h4>
                                                 <div class="rating">
                                                     <i class="ion-ios-star"></i>
                                                     <i class="ion-ios-star"></i>
@@ -527,7 +437,7 @@
                                                     <i class="ion-ios-star"></i>
                                                     <i class="ion-ios-star-outline"></i>
                                                 </div>
-                                                <p class="text">Their services are among the best to be honest. Making everything simple and easy, even for beginners and novices like me and my wife.</p>
+                                                <p class="text"> Una opinión de un cliente satisfecho con nuestro gran servicio. </p>
                                             </div>
                                         </div>
                                     </div>
@@ -537,7 +447,7 @@
                                                 <img src="{{asset('img/testimonial/4.jpg')}}" class="img-fluid" alt="">
                                             </div>
                                             <div class="testimonial-slider__single-item__content">
-                                                <h4 class="testimonial-name"> Milanda Moses <span class="designation">Founder Xcompany</span></h4>
+                                                <h4 class="testimonial-name"> Pedro Rodarte <span class="designation">Nombre de la empresa</span></h4>
                                                 <div class="rating">
                                                     <i class="ion-ios-star"></i>
                                                     <i class="ion-ios-star"></i>
@@ -545,7 +455,7 @@
                                                     <i class="ion-ios-star"></i>
                                                     <i class="ion-ios-star-outline"></i>
                                                 </div>
-                                                <p class="text">Working with @Tractor is like an ever-before experience when people knows what your problem is right when you start to mention it.</p>
+                                                <p class="text"> Una opinión de un cliente satisfecho con nuestro gran servicio. </p>
                                             </div>
                                         </div>
                                     </div>
@@ -555,7 +465,7 @@
                                                 <img src="{{asset('img/testimonial/5.jpg')}}" class="img-fluid" alt="">
                                             </div>
                                             <div class="testimonial-slider__single-item__content">
-                                                <h4 class="testimonial-name"> John Doe <span class="designation">Founder Xcompany</span></h4>
+                                                <h4 class="testimonial-name"> Susana Fuentes <span class="designation">Nombre de la empresa</span></h4>
                                                 <div class="rating">
                                                     <i class="ion-ios-star"></i>
                                                     <i class="ion-ios-star"></i>
@@ -563,7 +473,7 @@
                                                     <i class="ion-ios-star"></i>
                                                     <i class="ion-ios-star-outline"></i>
                                                 </div>
-                                                <p class="text">Here at @Tractor center, you have professional staff to look at your business. All solutions are prompt, precise and accurate.</p>
+                                                <p class="text"> Una opinión de un cliente satisfecho con nuestro gran servicio. </p>
                                             </div>
                                         </div>
                                     </div>
@@ -681,9 +591,10 @@
                                                     <img src="{{asset('img/icons/tree.png')}}" class="img-fluid" alt="">
                                                 </div>
                                                 <div class="project-counter-single-content__content">
-                                                    <span class="project-counter-single-content__project-count counter">2000</span>
-                                                    <h5 class="project-counter-single-content__project-title">Power Plants</h5>
-                                                    <p class="project-counter-single-content__subtext">With a countrywide network of power plants, we've doing our best to power our community.</p>
+                                                    <span class="project-counter-single-content__project-count">+</span>
+                                                    <span class="project-counter-single-content__project-count counter">150</span>
+                                                    <h5 class="project-counter-single-content__project-title">Compa&ntilde;ías Satisfechas</h5>
+                                                    <p class="project-counter-single-content__subtext">Brindamos atenci&oacute; y servicios a grandes empresas, simpre con el compromiso de cumplir cualquier necesidad.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -694,9 +605,11 @@
                                                     <img src="{{asset('img/icons/home.png')}}" class="img-fluid" alt="">
                                                 </div>
                                                 <div class="project-counter-single-content__content">
+
+                                                    <span class="project-counter-single-content__project-count">+</span>
                                                     <span class="project-counter-single-content__project-count counter">3000</span>
-                                                    <h5 class="project-counter-single-content__project-title">Industrial Projects</h5>
-                                                    <p class="project-counter-single-content__subtext">We have always been proud of what we have accomplished influential changes.</p>
+                                                    <h5 class="project-counter-single-content__project-title">Equipos reparados</h5>
+                                                    <p class="project-counter-single-content__subtext">Nuestra experiencia de m&aacute;s de {{date("Y") - 1991}} a&ntilde;os de servicio hace que seamos una de las mejores empresas.</p>
                                                 </div>
                                             </div>
                                         </div>

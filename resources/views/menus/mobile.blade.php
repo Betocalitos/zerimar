@@ -9,7 +9,7 @@
         <a href="javascript:void(0)">EQUIPOS</a>
         <ul class="sub-menu">
             @foreach ($typesEquipment as $item)
-                <li><a href="{{route('equipments',[$item->slug])}}">{{$item->name}}</a></li>
+                <li><a href="{{route('equipments.index',[$item->slug])}}">{{$item->name}}</a></li>
             @endforeach
         </ul>
     </li>

@@ -5,7 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>@yield('title',config('app.name'))</title>
-    <meta name="description" content="">
+
+    <meta property="og:title" content="@yield('meta-title',config('app.name'))"/>
+    <meta property="og:description" content="@yield('description','Empresa dedicada a la compra, venta y renta de montacargas, seminuevas y usadas')"/>
+    <meta property="og:image" itemprop="image" content="@yield('image',asset('img/slider/one/home_00_01.jpg'))">
+    <meta property="og:type" content="Website"/>
+    <meta property="og:url" content="{{url()->current()}}"/>
+    <meta name="keywords" content="@yield('keywords','montacargas seminuevas, montacargas usadas,venta de montacargas, renta de montacargas,reparacion de montacargas, servicios hidráulicos,pallet jack')"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
     <link rel="icon" href="{{asset('img/favicon.png')}}">
@@ -135,10 +141,8 @@
                                             </li>
                                             <li><a href="javascript:void();" data-tippy="Twitter" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-twitter"></i></a>
                                             </li>
-                                            <li><a href="javascript:void();" data-tippy="Vimeo" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-vimeo"></i></a></li>
                                             <li><a href="javascript:void();" data-tippy="Linkedin" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-linkedin"></i></a>
                                             </li>
-                                            <li><a href="javascript:void();" data-tippy="Skype" data-tippy-inertia="false" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder__yellow" data-tippy-placement="bottom"><i class="ion-social-skype"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -222,7 +226,7 @@
                                     <h4 class="footer-widget__title">EQUIPOS</h4>
                                     <ul class="footer-widget__navigation">
                                         @foreach ($typesEquipment as $item)
-                                            <li><a href="{{route('equipments',[$item->slug])}}">{{$item->name}}</a></li>
+                                            <li><a href="{{route('equipments.index',[$item->slug])}}">{{$item->name}}</a></li>
                                         @endforeach
                                     </ul>
                                 </div>

@@ -15,8 +15,9 @@ class CreateEquipmentTable extends Migration
     {
         Schema::create('equipment', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('name_slug')->unique();
-            $table->string('brand');
+            $table->string('brand')->nullable();
             $table->string('model')->nullable();
             $table->string('series')->nullable();
             $table->integer('year')->nullable();

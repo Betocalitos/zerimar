@@ -15,10 +15,11 @@ class CreateLiftTrucksTable extends Migration
     {
         Schema::create('lift_trucks', function (Blueprint $table) {
             $table->id();
-            $table->boolean('charger')->default(false);
-            $table->boolean('battery')->default(false);
+            $table->boolean('charger')->nullable();
+            $table->boolean('battery')->nullable();
             $table->string('max_height')->nullable();
             $table->string('nationality')->nullable();
+            $table->unsignedBigInteger('equipment_id');
             $table->timestamps();
         });
     }
