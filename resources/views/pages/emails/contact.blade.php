@@ -405,7 +405,7 @@ ul.social li{
       <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
       	<tr>
 		  <td valign="middle" class="bg_light footer email-section"
-		    style=" border-top: 1px solid rgba(0,0,0,.05);color: rgba(0,0,0,.5); padding: 0 2.5em;background:rgba(136, 0, 22, 0.9)"
+		    style=" border-top: 1px solid rgba(0,0,0,.05);color: rgba(0,0,0,.5); padding: 0 2.5em;background:#ffc246"
 		  >
             <table>
             	<tr>
