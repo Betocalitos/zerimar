@@ -16,14 +16,14 @@
                         <!-- LAYERS -->
 
                         <!-- LAYER NR. 1 -->
-                        <div class="tp-caption   tp-resizeme" id="slide-32-layer-1" data-x="['left','left','left','left']" data-hoffset="['371','75','75','52']" data-y="['top','top','top','top']" data-voffset="['240','262','272','198']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="image" data-responsive_offset="on" data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5;"><img src="assets/img/slider/about/about-slide-layer1.png" alt="" data-ww="['88px','88px','88px','88px']" data-hh="['88px','88px','88px','88px']" data-no-retina> </div>
+                        <div class="tp-caption   tp-resizeme" id="slide-32-layer-1" data-x="['left','left','left','left']" data-hoffset="['371','75','75','52']" data-y="['top','top','top','top']" data-voffset="['240','262','272','198']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="image" data-responsive_offset="on" data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 5;"> </div>
 
                         <!-- LAYER NR. 2 -->
-                        <div class="tp-caption   tp-resizeme" id="slide-32-layer-2" data-x="['left','left','left','left']" data-hoffset="['371','75','75','52']" data-y="['top','top','top','top']" data-voffset="['361','383','403','325']" data-fontsize="['50','50','35','35']" data-lineheight="['64','64','45','45']" data-width="['881','881','600','400']" data-height="none" data-whitespace="normal" data-type="text" data-responsive_offset="on" data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6; min-width: 881px; max-width: 881px; white-space: normal; font-size: 50px; line-height: 64px; font-weight: 700; color: #ffffff; letter-spacing: 0px;font-family:Roboto;">We are a team of strategists,
-                            designers, architects, and engineers. </div>
+                        <div class="tp-caption   tp-resizeme" id="slide-32-layer-2" data-x="['left','left','left','left']" data-hoffset="['371','75','75','52']" data-y="['top','top','top','top']" data-voffset="['361','383','403','325']" data-fontsize="['50','50','35','35']" data-lineheight="['64','64','45','45']" data-width="['881','881','600','400']" data-height="none" data-whitespace="normal" data-type="text" data-responsive_offset="on" data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 6; min-width: 881px; max-width: 881px; white-space: normal; font-size: 50px; line-height: 64px; font-weight: 700; color: #ffffff; letter-spacing: 0px;font-family:Roboto;">Somos un equipo de especialistas,
+                            en nuestro ramo  </div>
 
                         <!-- LAYER NR. 3 -->
-                        <a class="tp-caption TM-Button-flat-01 rev-btn " href="page-contact.html" target="_self" id="slide-32-layer-3" data-x="['left','left','left','left']" data-hoffset="['371','75','75','52']" data-y="['top','top','top','top']" data-voffset="['519','541','531','546']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="button" data-actions='' data-responsive_offset="on" data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(34,34,34);bg:rgb(255,255,255);bs:solid;bw:0 0 0 0;"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[17,17,17,17]" data-paddingright="[30,30,30,30]" data-paddingbottom="[17,17,17,17]" data-paddingleft="[30,30,30,30]" style="z-index: 7; white-space: nowrap; letter-spacing: 0.5px;text-transform:uppercase;border-color:rgba(0,0,0,1);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;text-decoration: none;">Get a quote </a>
+                        <a class="tp-caption TM-Button-flat-01 rev-btn " href="{{route('contact')}}" target="_self" id="slide-32-layer-3" data-x="['left','left','left','left']" data-hoffset="['371','75','75','52']" data-y="['top','top','top','top']" data-voffset="['519','541','531','546']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="button" data-actions='' data-responsive_offset="on" data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(34,34,34);bg:rgb(255,255,255);bs:solid;bw:0 0 0 0;"}]' data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[17,17,17,17]" data-paddingright="[30,30,30,30]" data-paddingbottom="[17,17,17,17]" data-paddingleft="[30,30,30,30]" style="z-index: 7; white-space: nowrap; letter-spacing: 0.5px;text-transform:uppercase;border-color:rgba(0,0,0,1);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;text-decoration: none;">Cont&aacute;ctanos </a>
                     </li>
                 </ul>
                 <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
@@ -51,7 +51,7 @@
                             tal manera que en 2003 tuvimos que trasladarnos a una nueva ubicación en donde actualmente nos encontramos, en Av. Obregón # 5062 en la misma ciudad de San Luis Rio Colorado.
                         </p>
                         <p>
-                            Con estos 29 años de experiencia transcurridos en el mercado, tenemos el compromiso de cumplir con cualquier necesidad que se le presente a nuestros clientes,
+                            Con estos {{date('Y') - 1991}} años de experiencia transcurridos en el mercado, tenemos el compromiso de cumplir con cualquier necesidad que se le presente a nuestros clientes,
                             tratándolos siempre con el debido respeto y honestidad en forma conjunta.
                         </p>
                     </div>
@@ -61,63 +61,28 @@
     </div>
     <!--====================  End of about text content  ====================-->
 
-    <!--====================  progress bar area ====================-->
-    <div class="progress-bar-area grey-bg position-relative">
-        <div class="half-bg-image bg-img" data-bg="{{asset('img/backgrounds/21.jpg')}}"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="progress-bar-content section-space--inner--120">
-                        <div class="career-title-area section-space--bottom--50">
-                            <h2 class="title">Show The Skills</h2>
-                            <p class="subtitle">Our industry professionals are able to deliver better ideas and solutions embedded with a deep understanding of each client’ business and industry.</p>
-                        </div>
-                        <div class="skill-wrapper">
-                            <!-- Start Skills Item #1 -->
-                            <div class="progress-bar-item">
-                                <div class="progress-info">
-                                    <span class="progress-info__title">Vision</span>
-                                    <span class="progress-info__percent percent"></span>
-                                </div>
+    <div class="feature-background__area dark-bg">
+        <div class="row no-gutters">
+            <div class="col-md-6">
+                <!-- feature background -->
+                <div class="feature-background__image bg-img" data-bg="/img/backgrounds/24.jpg" style="background-image: url(&quot;assets/img/backgrounds/24.jpg&quot;);"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="feature-background__content feature-background__content--style2">
+                    <div class="section-title-area">
+                        <h2 class="title title--style4 section-space--bottom--30 text-white">Ofrecemos un excelente servicio a nuestros clientes.</h2>
 
-                                <div class="progress-line">
-                                    <div class="progress-line-bar" data-percent="98%"></div>
-                                    <span class="progress-line-dot"></span>
-                                </div>
-                            </div>
-
-                            <!-- Start Skills Item #2 -->
-                            <div class="progress-bar-item">
-                                <div class="progress-info">
-                                    <span class="progress-info__title">Plan</span>
-                                    <span class="progress-info__percent percent"></span>
-                                </div>
-
-                                <div class="progress-line">
-                                    <div class="progress-line-bar" data-percent="90%"></div>
-                                    <span class="progress-line-dot"></span>
-                                </div>
-                            </div>
-
-                            <!-- Start Skills Item #3 -->
-                            <div class="progress-bar-item">
-                                <div class="progress-info">
-                                    <span class="progress-info__title">Growth</span>
-                                    <span class="progress-info__percent percent"></span>
-                                </div>
-
-                                <div class="progress-line">
-                                    <div class="progress-line-bar" data-percent="60%"></div>
-                                    <span class="progress-line-dot"></span>
-                                </div>
-                            </div>
-                        </div>
+                        <ul class="feature-list section-space--bottom--40">
+                            <li>Soporte personalizado a tu empresa o negocio.</li>
+                            <li>Los mejores equipos.</li>
+                            <li>Contamos con cualquier refacción para tu equipo.</li>
+                            <li>Simpre grantizamos todos nuestros trabajos y equipos.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--====================  End of progress bar area  ====================-->
     <!--====================  about text content ====================-->
     <div class="about-text-area section-space--inner--top--100">
         <div class="container">
@@ -185,44 +150,15 @@
             <div class="row align-items-center">
                 <div class="col-lg-8">
                     <!-- cta text -->
-                    <h2 class="cta-text text-center text-lg-left">Looking for a reliable & stable partner?</h2>
+                    <h2 class="cta-text text-center text-lg-left">¿Estas buscando un equipo?</h2>
                 </div>
                 <div class="col-lg-4 text-center text-lg-right">
-                    <a href="page-contact.html" class="ht-btn ht-btn--transparent ht-btn--transparent--alt-dark">GET A QUOTE</a>
+                    <a href="{{route('contact')}}" class="ht-btn ht-btn--transparent ht-btn--transparent--alt-dark">pregúntanos</a>
                 </div>
             </div>
         </div>
     </div>
     <!--====================  End of cta area  ====================-->
-
-    <!--====================  about content row ====================-->
-    <div class="about-content-row__wrapper grey-bg">
-        <div class="row no-gutters align-items-center">
-            <div class="col-xl-2 col-md-6 order-md-1 order-xl-1">
-                <div class="about-content-row__image bg-img" data-bg="{{asset('img/backgrounds/22.jpg')}}"></div>
-            </div>
-            <div class="col-xl-4 col-md-6 order-md-2 order-xl-2">
-                <div class="about-content-row__content">
-                    <h2 class="title">Looking for a job apply now</h2>
-                    <p class="text">We are an integrated engineering company composed of a group of agile and experienced engineers skilled in different business areas.</p>
-                    <a href="#" class="ht-btn ht-btn--transparent ht-btn--transparent--yellow">READ MORE</a>
-                </div>
-            </div>
-            <div class="col-xl-2 col-md-6 order-md-4 order-xl-3">
-                <div class="about-content-row__image bg-img" data-bg="{{asset('img/backgrounds/23.jpg')}}"></div>
-            </div>
-            <div class="col-xl-4 col-md-6 order-md-3 order-xl-4">
-                <div class="about-content-row__content">
-                    <h2 class="title">Let’s become a business partner</h2>
-                    <p class="text">We seek for cooperation in various areas in order to achieve the purpose of diversifying and expanding our company's operating fields.</p>
-                    <a href="#" class="ht-btn ht-btn--transparent ht-btn--transparent--yellow">READ MORE</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--====================  End of about content row  ====================-->
-
-
 </div>
 <!--====================  End of page content wrapper  ====================-->
 

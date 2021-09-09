@@ -7,10 +7,12 @@
     <div class="row no-gutters">
         <div class="col-lg-12">
             <!-- google map -->
-            <div class="google-map google-map--style-2" id="google-map-one" data-width="100%" data-zoom_enable=""
-                data-zoom="10" data-map_type="roadmap"></div>
+            <div class="google-map google-map--style-2" data-width="100%" >
+                <iframe frameborder="0" style="width: 100%;height:100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3366.4267850394017!2d-114.70968068487052!3d32.46127468106851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d6457d06e27961%3A0x2ccc488b969f92c6!2sMontacargas%20ZERIMAR!5e0!3m2!1ses!2smx!4v1631164748786!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
         </div>
     </div>
+    <div style="background-color: #ffc246;height:30px;"></div>
 </div>
 <!--====================  End of support footer area  ====================-->
 <!--====================  icon info area ====================-->
