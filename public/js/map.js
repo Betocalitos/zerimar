@@ -166,6 +166,5 @@ function initialize() {
 
     map.setOptions({ styles: styles });
     marker.setMap(map);
-    marker2.setMap(map);
 }
 google.maps.event.addDomListener(window, "load", initialize);
