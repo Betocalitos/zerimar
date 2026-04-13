@@ -14,8 +14,14 @@ RUN npm run prod
 # ==============================
 FROM php:7.4-fpm AS app
 
+# Fix Debian Bullseye repos (EOL, moved to archive)
+RUN if grep -q 'bullseye' /etc/debian_version 2>/dev/null; then \
+      sed -i 's|deb.debian.org/debian-security|archive.debian.org/debian-security|g' /etc/apt/sources.list 2>/dev/null || true; \
+      sed -i 's|deb.debian.org/debian|archive.debian.org/debian|g' /etc/apt/sources.list 2>/dev/null || true; \
+    fi
+
 # Install system dependencies
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --fix-missing \
     git curl libpng-dev libonig-dev libxml2-dev \
     zip unzip libzip-dev libfreetype6-dev libjpeg62-turbo-dev libwebp-dev \
     nginx \
@@ -30,7 +36,7 @@ WORKDIR /var/www
 
 # Copy composer files first (cache layer)
 COPY composer.json composer.lock ./
-RUN composer install --no-interaction --no-dev --optimize-autoloader --no-scripts 2>&1 || (cat /root/.composer/cache/repo/https---repo.packagist.org/*.json 2>/dev/null; composer diagnose 2>&1; exit 1)
+RUN composer install --no-interaction --no-dev --optimize-autoloader --no-scripts
 
 # Copy application code
 COPY . .
