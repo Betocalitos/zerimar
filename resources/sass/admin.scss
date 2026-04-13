@@ -1,0 +1,587 @@
+// Zerimar Admin Panel Styles
+// ========================================
+
+// 1. Override Bootstrap variables BEFORE importing Bootstrap
+$primary:       #0C95EC;
+$secondary:     #f9c322;
+$success:       #28a745;
+$info:          #17a2b8;
+$warning:       #f9c322;
+$danger:        #dc3545;
+$dark:          #11202D;
+
+$body-bg:       #f4f6f9;
+$body-color:    #888;
+$headings-color:#222;
+
+$font-family-sans-serif: 'Roboto', sans-serif;
+
+$border-radius:          0;
+$border-radius-sm:       0;
+$border-radius-lg:       0;
+$btn-border-radius:      0;
+$btn-border-radius-sm:   0;
+$btn-border-radius-lg:   0;
+$card-border-radius:     0;
+$input-border-radius:    0;
+
+$btn-font-weight:        700;
+$btn-padding-y:          .5rem;
+$btn-padding-x:          1.25rem;
+
+// Zerimar brand tokens
+$zerimar-blue:       #0C95EC;
+$zerimar-blue-dark:  #0679C0;
+$zerimar-deep:       #004395;
+$zerimar-gold:       #f9c322;
+$zerimar-gold-dark:  #e5a800;
+$zerimar-navy:       #11202D;
+$zerimar-navy-deep:  #05103B;
+$zerimar-heading:    #222;
+$zerimar-body:       #888;
+
+// 2. Import Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// 3. Import Toastr
+@import '~toastr/toastr';
+
+// 4. Import Dropzone
+@import '~dropzone/dist/dropzone.css';
+
+// 5. CSS Custom Properties
+:root {
+    --zerimar-blue:       #{$zerimar-blue};
+    --zerimar-blue-dark:  #{$zerimar-blue-dark};
+    --zerimar-deep:       #{$zerimar-deep};
+    --zerimar-gold:       #{$zerimar-gold};
+    --zerimar-navy:       #{$zerimar-navy};
+    --zerimar-navy-deep:  #{$zerimar-navy-deep};
+    --zerimar-heading:    #{$zerimar-heading};
+    --zerimar-body:       #{$zerimar-body};
+}
+
+// 6. Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+// ========================================
+// Layout
+// ========================================
+
+body {
+    font-family: $font-family-sans-serif;
+    background: $body-bg;
+}
+
+// Sidebar
+.sidebar {
+    min-height: 100vh;
+    background: linear-gradient(180deg, $zerimar-navy-deep 0%, $zerimar-navy 100%);
+    padding-top: 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+
+    .sidebar-brand {
+        padding: 1.25rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        h5 {
+            color: #fff;
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin-bottom: 0;
+        }
+
+        small {
+            display: block;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 2px;
+        }
+    }
+
+    .nav-section {
+        color: rgba(255, 255, 255, 0.35);
+        font-size: .65rem;
+        text-transform: uppercase;
+        padding: 1rem 1rem .25rem;
+        letter-spacing: .08em;
+        font-weight: 700;
+    }
+
+    .nav-link {
+        color: rgba(255, 255, 255, 0.65);
+        padding: .6rem 1rem;
+        border-radius: 0;
+        transition: all .2s ease;
+        position: relative;
+        font-size: .9rem;
+
+        &:hover {
+            color: #fff;
+            background: rgba($zerimar-blue, 0.15);
+        }
+
+        &.active {
+            color: #fff;
+            background: $zerimar-blue;
+            font-weight: 600;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 3px;
+                background: $zerimar-gold;
+            }
+        }
+
+        i {
+            margin-right: .5rem;
+            width: 18px;
+            text-align: center;
+        }
+    }
+}
+
+// Main content
+.main-content {
+    padding: 2rem;
+    background: $body-bg;
+    animation: fadeIn .3s ease;
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+}
+
+// Mobile sidebar toggle
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: .75rem;
+    left: .75rem;
+    z-index: 1031;
+    background: $zerimar-blue;
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 0;
+    transition: background .2s ease;
+
+    &:hover {
+        background: $zerimar-blue-dark;
+    }
+}
+
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1029;
+
+    &.show { display: block; }
+}
+
+@media (max-width: 767.98px) {
+    .sidebar-toggle { display: block; }
+
+    .sidebar {
+        position: fixed;
+        top: 0; left: -100%; width: 250px;
+        z-index: 1030;
+        transition: left .3s ease;
+
+        &.show { left: 0; }
+    }
+
+    .main-content {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+        padding: 1rem;
+        padding-top: 4rem;
+    }
+}
+
+// ========================================
+// Cards
+// ========================================
+
+.card {
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: box-shadow .3s ease, transform .2s ease;
+
+    .card-header {
+        background: #fff;
+        border-bottom: 2px solid $zerimar-blue;
+        font-weight: 600;
+        color: $zerimar-heading;
+        border-radius: 0;
+
+        h5, h6 {
+            margin-bottom: 0;
+            font-weight: 700;
+        }
+    }
+}
+
+.card-stat {
+    border-left: 4px solid $zerimar-blue;
+    transition: transform .2s ease, box-shadow .2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    &.stat-bundle { border-left-color: $info; }
+    &.stat-type   { border-left-color: $success; }
+    &.stat-trashed { border-left-color: $danger; }
+
+    h2 { color: $zerimar-heading; font-weight: 700; }
+}
+
+// ========================================
+// Tables
+// ========================================
+
+.table {
+    thead.thead-light th {
+        background-color: $zerimar-navy;
+        color: #fff;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: .75rem;
+        letter-spacing: .5px;
+        border: none;
+    }
+
+    tbody td {
+        vertical-align: middle;
+    }
+}
+
+.table-hover tbody tr {
+    transition: background-color .15s ease;
+}
+
+// ========================================
+// Buttons
+// ========================================
+
+.btn {
+    border-radius: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    font-size: .8rem;
+    transition: all .2s ease;
+}
+
+.btn-primary {
+    background-color: $zerimar-blue;
+    border-color: $zerimar-blue;
+
+    &:hover, &:focus {
+        background-color: $zerimar-blue-dark;
+        border-color: $zerimar-blue-dark;
+    }
+}
+
+.btn-outline-primary {
+    color: $zerimar-blue;
+    border-color: $zerimar-blue;
+
+    &:hover {
+        background-color: $zerimar-blue;
+        border-color: $zerimar-blue;
+        color: #fff;
+    }
+}
+
+.btn-warning {
+    background-color: $zerimar-gold;
+    border-color: $zerimar-gold;
+    color: $zerimar-heading;
+
+    &:hover, &:focus {
+        background-color: $zerimar-gold-dark;
+        border-color: $zerimar-gold-dark;
+        color: $zerimar-heading;
+    }
+}
+
+.btn-outline-success {
+    color: $success;
+    border-color: $success;
+
+    &:hover {
+        background-color: $success;
+        border-color: $success;
+        color: #fff;
+    }
+}
+
+.btn-outline-danger {
+    color: $danger;
+    border-color: $danger;
+
+    &:hover {
+        background-color: $danger;
+        border-color: $danger;
+        color: #fff;
+    }
+}
+
+// ========================================
+// Forms
+// ========================================
+
+.form-control {
+    border-radius: 0;
+
+    &:focus {
+        border-color: $zerimar-blue;
+        box-shadow: 0 0 0 .2rem rgba($zerimar-blue, .25);
+    }
+}
+
+.form-control-file {
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 .2rem rgba($zerimar-blue, .25);
+    }
+}
+
+// ========================================
+// Dropzone
+// ========================================
+
+.dropzone {
+    border: 2px dashed rgba($zerimar-blue, .3);
+    border-radius: 0;
+    background: rgba($zerimar-blue, .03);
+    transition: all .3s ease;
+    min-height: 120px;
+    padding: 1rem;
+
+    &:hover, &.dz-drag-hover {
+        border-color: $zerimar-blue;
+        background: rgba($zerimar-blue, .06);
+    }
+
+    .dz-message {
+        margin: 1rem 0;
+        color: $zerimar-body;
+
+        i { color: $zerimar-blue; font-size: 2rem; }
+        p { font-weight: 600; color: $zerimar-heading; margin-top: .5rem; }
+        small { color: $zerimar-body; }
+    }
+
+    .dz-preview {
+        .dz-progress {
+            border-radius: 0;
+
+            .dz-progress-bar {
+                background: $zerimar-blue;
+            }
+        }
+
+        .dz-success-mark, .dz-error-mark {
+            i { color: $success; }
+        }
+    }
+}
+
+.dz-clickable {
+    cursor: pointer;
+}
+
+// ========================================
+// Image gallery cards
+// ========================================
+
+.image-card {
+    border: 2px solid transparent;
+    border-radius: 0;
+    transition: border-color .2s ease, box-shadow .2s ease;
+    cursor: grab;
+    background: #fff;
+    position: relative;
+
+    &:hover {
+        border-color: $zerimar-blue;
+        box-shadow: 0 2px 8px rgba($zerimar-blue, .2);
+    }
+
+    &.sortable-ghost {
+        opacity: .4;
+        border: 2px dashed $zerimar-blue;
+    }
+
+    &.sortable-chosen {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+    }
+
+    .image-actions {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        opacity: 0;
+        transition: opacity .2s ease;
+    }
+
+    &:hover .image-actions {
+        opacity: 1;
+    }
+
+    img {
+        border-radius: 0;
+    }
+}
+
+// ========================================
+// Toastr overrides
+// ========================================
+
+#toast-container {
+    .toast {
+        border-radius: 0 !important;
+        font-family: 'Roboto', sans-serif;
+
+        &-success { border-left: 4px solid $success !important; }
+        &-error   { border-left: 4px solid $danger !important; }
+        &-info    { border-left: 4px solid $zerimar-blue !important; }
+        &-warning { border-left: 4px solid $zerimar-gold !important; }
+    }
+}
+
+// ========================================
+// Misc
+// ========================================
+
+.page-title {
+    font-weight: 700;
+    color: $zerimar-heading;
+    margin-bottom: 1.5rem;
+}
+
+.text-zerimar { color: $zerimar-blue; }
+.bg-zerimar { background-color: $zerimar-blue; }
+
+// Sort handle
+.sort-handle {
+    cursor: grab;
+    color: $zerimar-body;
+    transition: color .2s;
+
+    &:hover { color: $zerimar-blue; }
+}
+
+// Feature table delete button
+.delete-feature-btn {
+    transition: all .2s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+// Image delete button (small square)
+.delete-image-btn {
+    border-radius: 0 !important;
+    transition: all .2s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+// Upload area for create page
+.upload-area {
+    border: 2px dashed rgba($zerimar-blue, .3);
+    border-radius: 0;
+    background: rgba($zerimar-blue, .03);
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s ease;
+    min-height: 120px;
+
+    &:hover, &.dz-drag-hover {
+        border-color: $zerimar-blue;
+        background: rgba($zerimar-blue, .06);
+    }
+
+    i { color: $zerimar-blue; font-size: 2rem; }
+    p { font-weight: 600; color: $zerimar-heading; margin-top: .5rem; margin-bottom: .25rem; }
+    small { color: $zerimar-body; }
+}
+
+// Login page
+body.login-page {
+    background: linear-gradient(135deg, $zerimar-navy-deep 0%, $zerimar-navy 50%, darken($zerimar-blue, 20%) 100%);
+
+    .sidebar, .sidebar-toggle, .sidebar-overlay { display: none !important; }
+    .main-content {
+        padding: 0;
+        background: transparent;
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+        animation: none;
+    }
+
+    .card {
+        border: none;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .input-group-text {
+        border-radius: 0;
+    }
+
+    .toggle-password {
+        border-radius: 0;
+        border-color: #ced4da;
+
+        &:hover {
+            color: $zerimar-blue;
+        }
+    }
+}
+
+// ========================================
+// Confirm modal
+// ========================================
+.modal-content {
+    border-radius: 0;
+    border: none;
+}
+
+.modal-header {
+    border-bottom: 2px solid $zerimar-blue;
+
+    .modal-title {
+        font-weight: 700;
+        color: $zerimar-heading;
+    }
+}
+
+.modal-footer {
+    border-top: none;
+    padding: 1rem 1.5rem;
+}

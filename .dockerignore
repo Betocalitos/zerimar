@@ -1,0 +1,45 @@
+# Git
+.git
+.gitignore
+
+# Dependencies (installed during build)
+vendor/
+node_modules/
+
+# Laravel
+.env
+.env.backup
+.env.*.php
+.env.php
+
+# Storage & Cache (created at runtime)
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/logs/*
+
+# Testing
+.phpunit.result.cache
+phpunit.xml
+tests/
+
+# Documentation
+docs/
+CLAUDE.md
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local docker files (production uses docker/)
+docker-compose.yml
+
+# Local dev assets (rebuilt in production)
+# We DON'T ignore public/js and public/css — they may be pre-built

@@ -202,7 +202,7 @@
                                     <!-- single feature project box -->
                                     <div class="single-feature-project-box">
                                         <div class="single-feature-project-box__image">
-                                            <img src="{{ asset($item->images[0]->path) }}" class="img-fluid"
+                                            <img src="{{ $item->images[0]->url }}" class="img-fluid"
                                                 alt="{{ $item->name }}" style="height: 278px">
                                         </div>
                                         <div class="single-feature-project-box__content">
@@ -459,7 +459,7 @@
                                     <div class="swiper-slide">
                                         <div class="feature-project-two-single-item">
                                             <div class="feature-project-two-single-item__image">
-                                                <img src="{{ asset($item->images[0]->path) }}" style="max-height: 305px;"
+                                                <img src="{{ $item->images[0]->url }}" style="max-height: 305px;"
                                                     class="img-fluid" alt="{{ $item->name }}">
                                             </div>
                                             <div class="feature-project-two-single-item__content">

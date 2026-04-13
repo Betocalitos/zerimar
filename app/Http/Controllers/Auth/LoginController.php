@@ -37,4 +37,15 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    /**
+     * After logout, redirect to admin login instead of the public site.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    protected function loggedOut($request)
+    {
+        return redirect('/admin/login');
+    }
 }

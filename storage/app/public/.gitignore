@@ -1,2 +1,4 @@
 *
+!equipments/
+!equipments/**
 !.gitignore

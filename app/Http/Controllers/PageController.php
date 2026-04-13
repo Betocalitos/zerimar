@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\TypeEquipment;
+use App\EquipmentType;
 use App\Equipment;
 
 class PageController extends Controller
@@ -11,21 +11,22 @@ class PageController extends Controller
 
     public function index()
     {
-        $typesEquipment = TypeEquipment::all();
-        $randomEquipments1 = Equipment::all()->random(3);
-        $randomEquipments2 = Equipment::all()->random(5);
+        $typesEquipment = EquipmentType::all();
+        $standalone = Equipment::standalone()->get();
+        $randomEquipments1 = $standalone->count() >= 3 ? $standalone->random(3) : $standalone;
+        $randomEquipments2 = $standalone->count() >= 5 ? $standalone->random(5) : $standalone;
         return view("pages.home", compact('typesEquipment', 'randomEquipments1', 'randomEquipments2'));
     }
 
     public function about()
     {
-        $typesEquipment = TypeEquipment::all();
+        $typesEquipment = EquipmentType::all();
         return view('pages.about', compact('typesEquipment'));
     }
 
     public function contact()
     {
-        $typesEquipment = TypeEquipment::all();
+        $typesEquipment = EquipmentType::all();
         return view('pages.contact', compact('typesEquipment'));
     }
 }

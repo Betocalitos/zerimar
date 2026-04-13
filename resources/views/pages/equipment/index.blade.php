@@ -38,14 +38,38 @@
                     <div class="col-lg-12">
                         <div class="shop-single-product-wrapper">
                             <div class="row">
-                                @if (count($equipments))
+                                @if (count($equipments) + count($bundles))
+                                    @foreach ($bundles as $bundle)
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <div class="shop-single-product">
+                                            <div class="shop-single-product__thumb-wrapper">
+                                                <div class="shop-single-product__image">
+                                                    @if ($bundle->equipments->first() && $bundle->equipments->first()->images->first())
+                                                    <a href="{{route('bundles.show',[$bundle->slug])}}">
+                                                        <img src="{{ $bundle->equipments->first()->images->first()->url }}" class="img-fluid" alt="{{$bundle->name}}">
+                                                    </a>
+                                                    @endif
+                                                </div>
+                                                <div class="shop-single-product__cart-btn">
+                                                    <a href="{{route('bundles.show',[$bundle->slug])}}"> VER M&Aacute;S</a>
+                                                </div>
+                                            </div>
+                                            <div class="shop-single-product__content">
+                                                <h3 class="shop-single-product__title"><a href="{{route('bundles.show',[$bundle->slug])}}">{{$bundle->name}}</a></h3>
+                                                <div class="shop-single-product__price">
+                                                    <span class="discounted-price">@if ($bundle->price_sale) ${{number_format($bundle->price_sale,2)}} {{$bundle->exchange}} @endif</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endforeach
                                     @foreach ($equipments as $item)
                                     <div class="col-lg-3 col-md-4 col-sm-6">
                                         <div class="shop-single-product">
                                             <div class="shop-single-product__thumb-wrapper">
                                                 <div class="shop-single-product__image">
                                                     <a href="{{route('equipments.show',[$item->name_slug])}}">
-                                                        <img src="{{asset($item->images[0]->path)}}" class="img-fluid" alt="{{$item->name}}">
+                                                        <img src="{{ $item->images[0]->url }}" class="img-fluid" alt="{{$item->name}}">
                                                     </a>
                                                 </div>
                                                 <div class="shop-single-product__cart-btn">

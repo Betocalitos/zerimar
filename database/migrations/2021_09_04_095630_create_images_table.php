@@ -6,26 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateImagesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->string('path');
             $table->unsignedBigInteger('equipment_id');
+            $table->integer('sort_order')->default(0);
+            $table->foreign('equipment_id')->references('id')->on('equipment')->onDelete('cascade');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('images');

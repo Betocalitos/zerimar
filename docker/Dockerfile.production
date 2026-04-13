@@ -1,0 +1,67 @@
+# ==============================
+# Stage 1: Build frontend assets
+# ==============================
+FROM node:14-alpine AS node
+
+WORKDIR /var/www
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY . .
+RUN npm run prod
+
+# ==============================
+# Stage 2: PHP application
+# ==============================
+FROM php:7.4-fpm AS app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git curl libpng-dev libonig-dev libxml2-dev \
+    zip unzip libzip-dev libfreetype6-dev libjpeg62-turbo-dev libwebp-dev \
+    nginx \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
+    && docker-php-ext-install -j$(nproc) gd pdo_mysql mbstring exif pcntl bcmath zip \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Install Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+WORKDIR /var/www
+
+# Copy composer files first (cache layer)
+COPY composer.json composer.lock ./
+RUN composer install --no-interaction --no-dev --optimize-autoloader --no-scripts
+
+# Copy application code
+COPY . .
+
+# Copy compiled assets from node stage
+COPY --from=node /var/www/public/js /var/www/public/js
+COPY --from=node /var/www/public/css /var/www/public/css
+COPY --from=node /var/www/public/mix-manifest.json /var/www/public/mix-manifest.json
+
+# Run post-autoload scripts
+RUN composer run-script post-autoload-dump
+
+# Create storage directories and symlink
+RUN mkdir -p storage/framework/{sessions,cache,views,testing} \
+    && mkdir -p storage/logs \
+    && mkdir -p storage/app/public/equipments \
+    && mkdir -p bootstrap/cache \
+    && php artisan storage:link || true
+
+# Set permissions
+RUN chown -R www-data:www-data /var/www \
+    && chmod -R 755 /var/www/storage \
+    && chmod -R 755 /var/www/bootstrap/cache
+
+# Copy nginx config
+COPY docker/nginx/default.conf /etc/nginx/sites-available/default
+
+EXPOSE 80
+
+# Start script: nginx + php-fpm
+COPY docker/start.sh /start.sh
+RUN chmod +x /start.sh
+
+CMD ["/start.sh"]

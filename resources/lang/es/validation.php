@@ -130,8 +130,45 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'images' => [
+            'required' => 'Debe seleccionar al menos una imagen.',
+            'max' => 'No se pueden subir más de :max imágenes a la vez.',
+        ],
+        'images.*' => [
+            'image' => 'Cada archivo debe ser una imagen.',
+            'mimes' => 'Las imágenes deben ser de tipo: jpg, jpeg, png o webp.',
+            'max' => 'Cada imagen no debe pesar más de :max kilobytes.',
+            'dimensions' => 'Las imágenes no deben exceder 1920x1372 píxeles.',
+        ],
+        'name' => [
+            'required' => 'El nombre es obligatorio.',
+        ],
+        'slug' => [
+            'unique' => 'Este slug ya está en uso. Intente con otro.',
+        ],
+        'email' => [
+            'required' => 'Favor de ingresar su correo.',
+            'email' => 'Favor de ingresar un correo válido.',
+        ],
+        'message' => [
+            'required' => 'Favor de ingresar el mensaje.',
+            'max' => 'Su mensaje no debe exceder los 255 caracteres.',
+        ],
+        'equipment_type_id' => [
+            'required' => 'Debe seleccionar una categoría.',
+            'exists' => 'La categoría seleccionada no existe.',
+        ],
+        'equipment_ids' => [
+            'array' => 'Los equipos seleccionados no son válidos.',
+        ],
+        'equipment_ids.*' => [
+            'exists' => 'Uno de los equipos seleccionados no existe.',
+        ],
+        'price_sale' => [
+            'numeric' => 'El precio de venta debe ser un número.',
+        ],
+        'price_rent' => [
+            'numeric' => 'El precio de renta debe ser un número.',
         ],
     ],
 
@@ -146,6 +183,30 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => 'nombre',
+        'slug' => 'slug',
+        'brand' => 'marca',
+        'model' => 'modelo',
+        'series' => 'serie',
+        'year' => 'año',
+        'capacity' => 'capacidad',
+        'motor' => 'motor',
+        'description' => 'descripción',
+        'price_sale' => 'precio de venta',
+        'price_rent' => 'precio de renta',
+        'exchange' => 'acepta intercambio',
+        'equipment_type_id' => 'categoría',
+        'charger' => 'cargador',
+        'battery' => 'batería',
+        'max_height' => 'altura máxima',
+        'nationality' => 'nacionalidad',
+        'images' => 'imágenes',
+        'images.*' => 'imagen',
+        'email' => 'correo',
+        'message' => 'mensaje',
+        'ids' => 'identificadores',
+        'value' => 'valor',
+    ],
 
 ];

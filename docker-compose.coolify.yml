@@ -1,0 +1,55 @@
+# docker-compose.coolify.yml
+# This file is used by Coolify for production deployment.
+# Coolify manages the database separately — this only defines the app container.
+#
+# In Coolify:
+# 1. Create a new resource → Docker Compose
+# 2. Point to this file or paste its contents
+# 3. Set environment variables in Coolify's UI
+# 4. Set the data volume for persistent storage (uploads)
+
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.production
+    container_name: zerimar_app
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    environment:
+      - APP_ENV=production
+      - APP_DEBUG=false
+      - APP_KEY=${APP_KEY}
+      - APP_URL=${APP_URL}
+      - DB_CONNECTION=mysql
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT:-3306}
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - MAIL_MAILER=${MAIL_MAILER:-smtp}
+      - MAIL_HOST=${MAIL_HOST}
+      - MAIL_PORT=${MAIL_PORT:-587}
+      - MAIL_USERNAME=${MAIL_USERNAME}
+      - MAIL_PASSWORD=${MAIL_PASSWORD}
+      - MAIL_ENCRYPTION=${MAIL_ENCRYPTION:-tls}
+      - MAIL_FROM_ADDRESS=${MAIL_FROM_ADDRESS}
+      - MAIL_FROM_NAME="${MAIL_FROM_NAME:-Zerimar}"
+    volumes:
+      - app_storage:/var/www/storage/app/public
+      - app_cache:/var/www/bootstrap/cache
+    networks:
+      - zerimar_network
+
+volumes:
+  app_storage:
+    driver: local
+  app_cache:
+    driver: local
+
+networks:
+  zerimar_network:
+    driver: bridge

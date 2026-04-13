@@ -2,7 +2,7 @@
 @section('title',"$equipment->name |".config('app.name'))
 @section('meta-title',$equipment->name)
 @section('description',$equipment->description)
-@section('image',asset($equipment->images[0]->path))
+@section('image', $equipment->images[0]->url)
 @section('content')
  <!--====================  End of header area  ====================-->
     <!--====================  breadcrumb area ====================-->
@@ -38,7 +38,7 @@
                                                 @foreach ($equipment->images as $image)
                                                 <div class="swiper-slide">
                                                     <div class="product-details__image-single">
-                                                        <img src="{{asset($image->path)}}" class="img-fluid" alt="{{$equipment->name}}">
+                                                        <img src="{{ $image->url }}" class="img-fluid" alt="{{$equipment->name}}">
                                                     </div>
                                                 </div>
                                                 @endforeach
@@ -119,6 +119,12 @@
             </div>
         </div>
         <!--====================  End of product details  area  ====================-->
+        @php
+            $hasSpecs = $equipment->price_rent || $equipment->charger || $equipment->battery || $equipment->max_height || $equipment->nationality;
+            $hasFeatures = $equipment->features && $equipment->features->count() > 0;
+            $showAdditional = $hasSpecs || $hasFeatures;
+        @endphp
+        @if ($showAdditional)
         <!--=======  single product description tab area  =======-->
         <div class="single-product-description-tab-area">
             <div class="container">
@@ -136,7 +142,6 @@
                     </div>
                 </div>
             </div>
-            @if ($equipment->features)
                 <!--=======  description tab content  =======-->
             <div class="single-product-description-tab-content">
 
@@ -151,6 +156,36 @@
                                     <div class="additional-info-content">
                                         <table class="additional-info-table">
                                             <tbody>
+                                                @if ($equipment->price_rent)
+                                                <tr>
+                                                    <th>Precio renta</th>
+                                                    <td class="product_dimensions">${{number_format($equipment->price_rent, 2)}} {{ $equipment->exchange }}</td>
+                                                </tr>
+                                                @endif
+                                                @if ($equipment->charger)
+                                                <tr>
+                                                    <th>Cargador</th>
+                                                    <td class="product_dimensions">S&iacute;</td>
+                                                </tr>
+                                                @endif
+                                                @if ($equipment->battery)
+                                                <tr>
+                                                    <th>Bater&iacute;a</th>
+                                                    <td class="product_dimensions">S&iacute;</td>
+                                                </tr>
+                                                @endif
+                                                @if ($equipment->max_height)
+                                                <tr>
+                                                    <th>Altura m&aacute;x.</th>
+                                                    <td class="product_dimensions">{{ $equipment->max_height }}</td>
+                                                </tr>
+                                                @endif
+                                                @if ($equipment->nationality)
+                                                <tr>
+                                                    <th>Nacionalidad</th>
+                                                    <td class="product_dimensions">{{ $equipment->nationality }}</td>
+                                                </tr>
+                                                @endif
                                                 @foreach ($equipment->features as $feature)
                                                 <tr>
                                                     <th>{{$feature->name}}</th>
@@ -170,9 +205,9 @@
                 </div>
             </div>
             <!--=======  End of description tab content  =======-->
-            @endif
         </div>
         <!--=======  End of single product description tab area  =======-->
+        @endif
         <!--====================  related product slider ====================-->
         <div class="related-product-slider-area">
             <div class="container">
@@ -194,7 +229,7 @@
                                             <div class="shop-single-product__thumb-wrapper">
                                                 <div class="shop-single-product__image">
                                                     <a href="{{route('equipments.show',[$other->name_slug])}}">
-                                                        <img src="{{asset($other->images[0]->path)}}" class="img-fluid" alt="{{$other->name}}">
+                                                        <img src="{{ $other->images[0]->url }}" class="img-fluid" alt="{{$other->name}}">
                                                     </a>
                                                 </div>
 

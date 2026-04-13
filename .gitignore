@@ -10,3 +10,10 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+# External drive (not part of project)
+/Externo/
+
+# Claude Code generated files
+CLAUDE.md
+docs/
