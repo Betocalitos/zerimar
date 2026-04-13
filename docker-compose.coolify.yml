@@ -17,8 +17,8 @@ services:
       dockerfile: docker/Dockerfile.production
     container_name: zerimar_app
     restart: unless-stopped
-    ports:
-      - "80:80"
+    expose:
+      - "80"
     environment:
       - APP_ENV=production
       - APP_DEBUG=false
