@@ -60,6 +60,9 @@ RUN mkdir -p storage/framework/{sessions,cache,views,testing} \
     && mkdir -p bootstrap/cache \
     && php artisan storage:link || true
 
+# Copy seed images to a separate directory (volume will hide the target)
+COPY storage/app/public/equipments/ /var/www/storage/app/public/equipments-seed/
+
 # Set permissions
 RUN chown -R www-data:www-data /var/www \
     && chmod -R 755 /var/www/storage \

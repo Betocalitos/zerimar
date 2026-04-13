@@ -20,7 +20,7 @@ services:
     expose:
       - "80"
     volumes:
-      - app_storage:/var/www/storage/app/public
+      - app_storage:/var/www/storage/app/public/equipments
       - app_cache:/var/www/bootstrap/cache
     networks:
       - coolify
