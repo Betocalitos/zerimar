@@ -41,6 +41,12 @@ services:
     volumes:
       - app_storage:/var/www/storage/app/public
       - app_cache:/var/www/bootstrap/cache
+    networks:
+      - coolify
+
+networks:
+  coolify:
+    external: true
 
 volumes:
   app_storage:
