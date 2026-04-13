@@ -36,6 +36,10 @@ WORKDIR /var/www
 
 # Copy composer files first (cache layer)
 COPY composer.json composer.lock ./
+
+# Create classmap directories before install (they're referenced in composer.json autoload)
+RUN mkdir -p database/seeds database/factories
+
 RUN composer install --no-interaction --no-dev --optimize-autoloader --no-scripts
 
 # Copy application code
