@@ -1,10 +1,13 @@
 #!/bin/sh
 set -e
 
-# Copy seed images to volume if it's empty (first deploy)
-if [ -z "$(ls -A /var/www/storage/app/public/equipments/ 2>/dev/null)" ]; then
-    echo "Copying seed images to volume..."
-    cp -a /var/www/storage/app/public/equipments-seed/. /var/www/storage/app/public/equipments/ 2>/dev/null || true
+# Copy seed images to volume if they don't exist yet
+SEED_DIR="/var/www/storage/app/public/equipments-seed"
+DEST_DIR="/var/www/storage/app/public/equipments"
+if [ -d "$SEED_DIR" ] && [ "$(ls -A "$SEED_DIR" 2>/dev/null)" ]; then
+    echo "Syncing seed images to volume..."
+    cp -an "$SEED_DIR"/* "$DEST_DIR/" 2>/dev/null || true
+    rm -rf "$DEST_DIR/equipments" 2>/dev/null || true
 fi
 
 # Run migrations if needed
