@@ -85,12 +85,14 @@
 <div class="row">
     <div class="col-md-3">
         <div class="form-group form-check">
+            <input type="hidden" name="charger" value="0">
             <input type="checkbox" name="charger" id="charger" value="1" class="form-check-input" {{ ($equipment->charger ?? false) ? 'checked' : '' }}>
             <label for="charger" class="form-check-label">Cargador</label>
         </div>
     </div>
     <div class="col-md-3">
         <div class="form-group form-check">
+            <input type="hidden" name="battery" value="0">
             <input type="checkbox" name="battery" id="battery" value="1" class="form-check-input" {{ ($equipment->battery ?? false) ? 'checked' : '' }}>
             <label for="battery" class="form-check-label">Batería</label>
         </div>
