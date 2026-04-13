@@ -1,13 +1,13 @@
 # docker-compose.coolify.yml
 # Coolify production deployment
 #
-# Setup in Coolify:
-# 1. Create Docker Compose resource → point to this file
-# 2. Add ALL environment variables in Coolify's Environment tab
-# 3. Make sure the database is in the same Coolify project (shared network)
+# ALL environment variables are managed through Coolify's Environment UI.
+# Coolify creates a .env file and injects it via env_file automatically.
+# Do NOT define environment vars here — they won't be substituted correctly.
 #
 # Required env vars (set in Coolify UI):
-#   APP_KEY, APP_URL, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD
+#   APP_KEY, APP_URL, APP_ENV, APP_DEBUG
+#   DB_CONNECTION, DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD
 #   MAIL_MAILER, MAIL_HOST, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD,
 #   MAIL_ENCRYPTION, MAIL_FROM_ADDRESS, MAIL_FROM_NAME
 
@@ -19,25 +19,6 @@ services:
     restart: unless-stopped
     expose:
       - "80"
-    environment:
-      APP_ENV: production
-      APP_DEBUG: "false"
-      APP_KEY: "${APP_KEY}"
-      APP_URL: "${APP_URL}"
-      DB_CONNECTION: mysql
-      DB_HOST: "${DB_HOST}"
-      DB_PORT: "${DB_PORT:-3306}"
-      DB_DATABASE: "${DB_DATABASE}"
-      DB_USERNAME: "${DB_USERNAME}"
-      DB_PASSWORD: "${DB_PASSWORD}"
-      MAIL_MAILER: "${MAIL_MAILER:-smtp}"
-      MAIL_HOST: "${MAIL_HOST}"
-      MAIL_PORT: "${MAIL_PORT:-587}"
-      MAIL_USERNAME: "${MAIL_USERNAME}"
-      MAIL_PASSWORD: "${MAIL_PASSWORD}"
-      MAIL_ENCRYPTION: "${MAIL_ENCRYPTION:-tls}"
-      MAIL_FROM_ADDRESS: "${MAIL_FROM_ADDRESS}"
-      MAIL_FROM_NAME: "${MAIL_FROM_NAME:-Zerimar}"
     volumes:
       - app_storage:/var/www/storage/app/public
       - app_cache:/var/www/bootstrap/cache
