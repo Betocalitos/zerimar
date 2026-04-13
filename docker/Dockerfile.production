@@ -30,7 +30,7 @@ WORKDIR /var/www
 
 # Copy composer files first (cache layer)
 COPY composer.json composer.lock ./
-RUN composer install --no-interaction --no-dev --optimize-autoloader --no-scripts
+RUN composer install --no-interaction --no-dev --optimize-autoloader --no-scripts 2>&1 || (cat /root/.composer/cache/repo/https---repo.packagist.org/*.json 2>/dev/null; composer diagnose 2>&1; exit 1)
 
 # Copy application code
 COPY . .
